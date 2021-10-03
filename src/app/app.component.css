@@ -1,0 +1,16 @@
+.navigationLinks {
+    text-align: center;
+    width: 333px;
+    margin: 0 auto;
+}
+
+.navigationLinks ul li{
+    list-style-type: none;
+    float: left;
+    padding-right: 20px;
+}
+
+.navigationLinks ul li a{ 
+    text-decoration: none;
+    color: blue;
+}
