@@ -1,0 +1,14 @@
+<form class="example-form">
+    <input type="text"
+           placeholder="Search Dog"
+           [formControl]="control"
+           [matAutocomplete]="auto"
+           [(ngModel)] = "filterBy"
+           (keyup)="filter()">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let dog of filterName">
+        {{dog.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </form>
+  

@@ -1,0 +1,72 @@
+<h1>Create New Dog</h1>
+<form [formGroup]="dogForm" (ngSubmit) = "insertData()"  >
+    <div>
+    <label for="dogName">Dog Name</label>
+    <input type="text"  formControlName = "dogNames" required>
+    </div>
+    <div *ngIf="dogNames.invalid && (dogNames.dirty || dogNames.touched)"
+    class="alert alert-danger">
+     <div *ngIf="dogNames.errors?.required">
+        Name is required.
+    </div>
+    </div>
+    <br>
+    <div>
+    <label for="dogOwnerName">Owner Full Name</label>
+    <input type="text" formControlName = "dogOwnerNames" required >
+    </div>
+    <div *ngIf="dogOwnerNames.invalid && (dogOwnerNames.dirty || dogOwnerNames.touched)"
+    class="alert alert-danger">
+     <div *ngIf="dogOwnerNames.errors?.required">
+        Dog owner name is required.
+    </div>
+   </div>
+   <br>
+    <div>
+    <label for="dogOwnerPhone">Dog Owner Phone</label>
+    <input type="tel" formControlName = "dogOwnerPhones"    pattern="[0-9]{10}" required>
+    </div>
+    <div *ngIf="dogOwnerPhones.invalid && (dogOwnerPhones.dirty || dogOwnerPhones.touched)"
+    class="alert alert-danger">
+     <div *ngIf="dogOwnerPhones.errors?.required">
+        Dog owner phone is required.
+    </div>
+    </div>
+    <br>
+    <div>
+    <label for="dogColor">Dog Color</label>
+    <input type="text" formControlName = "dogColors" required>
+    </div>
+    <div *ngIf="dogColors.invalid && (dogColors.dirty || dogColors.touched)"
+    class="alert alert-danger">
+     <div *ngIf="dogColors.errors?.required">
+        Dog Color is required.
+    </div>
+    </div>
+    <br>
+    <div>
+    <label for="dogAge">Dog Age(Years)</label>
+    <input type="number" formControlName = "dogAges"  min="0.5" required>
+    </div>
+    <div *ngIf="dogAges.invalid && (dogAges.dirty || dogAges.touched)"
+    class="alert alert-danger">
+     <div *ngIf="dogAges.errors?.required">
+        Dog Age is required.
+    </div>
+    </div>
+    <div>
+    <br>
+    <label for="dogKind">Dog Kind</label>
+    <input type="text" formControlName = "dogKinds" required >
+    </div>
+    <div *ngIf="dogKinds.invalid && (dogKinds.dirty || dogKinds.touched)"
+    class="alert alert-danger">
+     <div *ngIf="dogKinds.errors?.required">
+        Dog kind is required.
+    </div>
+    </div>
+    <br>
+    <div class="button-container">
+        <button [disabled]="!dogForm.valid" type="submit" >Create</button>
+    </div>
+</form>

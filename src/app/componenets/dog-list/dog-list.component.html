@@ -1,0 +1,29 @@
+<h1>Dogs Managment Table</h1>
+<app-filters-search></app-filters-search>
+<br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Dog Name</th>
+            <th>Dog Owner Full Name</th>
+            <th>Dog Owner Phone</th>
+            <th>Dog Color</th>
+            <th>Dog Age(Years)</th>
+            <th>Dog kind</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let dog of dogs">
+            <td>{{dog.id}}</td>
+            <td>{{dog.name}}</td>
+            <td>{{dog.ownerName}}</td> 
+            <td>{{dog.ownerPhone}}</td> 
+            <td>{{dog.color}}</td> 
+            <td>{{dog.age}}</td> 
+            <td>{{dog.kind}}</td>
+            <td><button (click) = "deleteDog(dog.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
